@@ -4,6 +4,9 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: "kotlin-kapt"
+
+
 android {
     compileSdkVersion 28
     buildToolsVersion "29.0.2"
@@ -25,13 +28,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
     implementation 'io.github.inflationx:calligraphy3:3.1.1'
     implementation 'io.github.inflationx:viewpump:2.0.3'
     implementation 'androidx.cardview:cardview:1.0.0'
@@ -42,4 +45,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.google.zxing:core:3.2.1'
+    implementation 'com.airbnb:deeplinkdispatch:4.1.0'
+    kapt 'com.airbnb:deeplinkdispatch-processor:4.1.0'
 }

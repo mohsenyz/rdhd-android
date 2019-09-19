@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="homeTopSectionProfileMarginTop">24dp</dimen>
+    <dimen name="separateLineHeight">2dp</dimen>
+    <dimen name="homeTopSectionItemMargin">32dp</dimen>
+    <dimen name="homeTopSectionItemMarginTop">12dp</dimen>
+    <dimen name="homeTopSectionIconMargin">12dp</dimen>
+    <dimen name="homeLinkBarItemMarginTop">40dp</dimen>
+</resources>
