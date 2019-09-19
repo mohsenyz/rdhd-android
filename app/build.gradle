@@ -28,7 +28,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.1.0'
     testImplementation 'junit:junit:4.12'
@@ -46,6 +46,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.google.zxing:core:3.2.1'
     implementation 'de.hdodenhof:circleimageview:3.0.1'
+    // pin entry edit text
+    implementation 'com.justkiddingbaby:vercodeedittext:1.1.0'
+    implementation 'com.android.support:design:28.0.0'
 
 
     implementation 'com.airbnb:deeplinkdispatch:4.1.0'
