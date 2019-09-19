@@ -16,6 +16,7 @@
         android:id="@+id/topSection">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/settings"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_gear"
@@ -149,6 +150,7 @@
                     app:layout_constraintGuide_percent="0.5"/>
 
                 <LinearLayout
+                    android:id="@+id/services_layout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
@@ -231,10 +233,11 @@
                     android:layout_marginTop="28dp"
                     app:layout_constraintTop_toBottomOf="@id/servicesSectionCaption"
                     app:layout_constraintTop_toTopOf="parent">
+
                     <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/servicesRecyclerView"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/servicesRecyclerView"/>
+                        android:layout_height="wrap_content" />
 
                 </RelativeLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>

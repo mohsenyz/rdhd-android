@@ -45,6 +45,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.google.zxing:core:3.2.1'
+    implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
     implementation 'de.hdodenhof:circleimageview:3.0.1'
     // pin entry edit text
     implementation 'com.justkiddingbaby:vercodeedittext:1.1.0'
