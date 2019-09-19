@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Rdhd android</string>
+    <string name="app_name">Hey Pay</string>
+    <string name="register">ثبت نام</string>
+    <string name="login_email_hint">ایمیل</string>
+    <string name="login_password_hint">رمز ورود</string>
+    <string name="signup_login_hint">قبلا ثبت نام کرده اید؟ ورود</string>
+    <string name="login_signup_hint">قبلا ثبت نام نکرده اید؟ ثبت نام</string>
+    <string name="name">نام</string>
+    <string name="mobile_number">شماره موبایل</string>
+    <string name="login">ورود</string>
+    <string name="forgot_password">رمز خود را فراموش کرده اید؟</string>
+
 </resources>

@@ -6,4 +6,11 @@
     <dimen name="homeTopSectionItemMarginTop">12dp</dimen>
     <dimen name="homeTopSectionIconMargin">12dp</dimen>
     <dimen name="homeLinkBarItemMarginTop">40dp</dimen>
+    <dimen name="headerTextSize">22sp</dimen>
+    <dimen name="newsMoreTextSize">12sp</dimen>
+    <dimen name="loginCardRadius">20dp</dimen>
+    <dimen name="loginViewsMargin">20dp</dimen>
+
+    <dimen name="signup_text_margin_top">10dp</dimen>
+
 </resources>
