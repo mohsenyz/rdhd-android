@@ -9,5 +9,8 @@
     <string name="mobile_number">شماره موبایل</string>
     <string name="login">ورود</string>
     <string name="forgot_password">رمز خود را فراموش کرده اید؟</string>
+    <string name="confirm">تایید</string>
+    <string name="enter_verification_code">کد دریافت شده را وارد نمایید</string>
+    <string name="didnt_get_verification_code">کد را دریافت نکرده اید؟</string>
 
 </resources>
