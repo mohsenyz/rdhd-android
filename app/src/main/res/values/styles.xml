@@ -17,6 +17,18 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="AppTheme.TextAppearance.CodeScannerDisplayName" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="AppTheme.TextAppearance.CodeScannerDisplayValue" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
     <style name="AppTheme.TextAppearance.LinkbarSectionCaption" parent="TextAppearance.AppCompat.Subhead">
         <item name="android:textColor">#fff</item>
         <item name="android:textStyle">bold</item>
@@ -56,6 +68,11 @@
     <style name="linearParent" parent="parent">
         <item name="android:orientation">vertical</item>
     </style>
+
+    <style name="AppTheme.TextAppearance.BorderedBtn" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">#fff</item>
+    </style>
+
 
     <style name="headerTextPrimary" parent="headerText">
         <item name="android:textColor">@color/primaryTextColor</item>

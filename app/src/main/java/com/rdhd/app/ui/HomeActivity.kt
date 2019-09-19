@@ -1,5 +1,6 @@
 package com.rdhd.app.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
@@ -27,12 +28,14 @@ class HomeActivity : BaseActivity() {
         topSection.doOnLayout {
             val parent = (linkBarSection.parent as ViewGroup)
             val layoutParam = parent.layoutParams as FrameLayout.LayoutParams
-            layoutParam.topMargin = topSection.bottom - convertDpToPixel(4F, this).toInt()
+            layoutParam.topMargin = topSection.bottom - convertDpToPixel(28F, this).toInt()
             parent.layoutParams = layoutParam
         }
 
         servicesRecyclerView.layoutManager = GridLayoutManager(this, 3)
         val fake = listOf<Service>(Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance))
         servicesRecyclerView.adapter = ServicesAdapter(fake)
+
+        startActivity(Intent(this, CodeScannerActivity::class.java))
     }
 }
