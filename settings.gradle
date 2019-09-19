@@ -1,0 +1,2 @@
+rootProject.name='Rdhd android'
+include ':app'
