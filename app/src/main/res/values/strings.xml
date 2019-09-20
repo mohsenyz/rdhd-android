@@ -12,5 +12,7 @@
     <string name="confirm">تایید</string>
     <string name="enter_verification_code">کد دریافت شده را وارد نمایید</string>
     <string name="didnt_get_verification_code">کد را دریافت نکرده اید؟</string>
+    <string name="snack_bar_text">باشه</string>
+    <string name="snack_bar_undo">اکهی</string>
 
 </resources>
