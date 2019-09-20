@@ -10,17 +10,21 @@
     android:layout_marginTop="8dp"
     android:background="@drawable/new_service_background">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/new_service_text_view"
-        android:layout_marginTop="10dp"
-        android:textSize="24sp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        android:background="#000"
         android:layout_height="wrap_content"
-        android:text="سرویس جدید"
-        android:layout_gravity="center"/>
+        android:background="@drawable/dialog_appbar"
+        android:gravity="center"
+        android:padding="12dp"
+        android:id="@+id/new_service_title"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/titleView"
+            android:text="بیمه ی تعاون"
+            android:textAppearance="@style/AppTheme.TextAppearance.DialogHeader" />
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -49,9 +53,9 @@
                 app:layout_rowWeight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextServiceName"
+                    android:id="@+id/editTextServiceCol"
                     style="@style/modifiedEditText"
-                    android:hint="نام سرویس"
+                    android:hint="دسته"
                     android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -65,7 +69,7 @@
                 android:layout_weight="5">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextPrice"
+                    android:id="@+id/editTextServicePrice"
                     style="@style/modifiedEditText"
                     android:hint="قیمت"
                     android:inputType="text"
@@ -95,7 +99,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextServicePeriod"
                     style="@style/modifiedEditText"
-                    android:hint="نام سرویس"
+                    android:hint="دوره"
                     android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -110,9 +114,9 @@
                 android:layout_weight="5">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextCol"
+                    android:id="@+id/editTextServiceName"
                     style="@style/modifiedEditText"
-                    android:hint="قیمت"
+                    android:hint="نام سرویس"
                     android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -131,22 +135,30 @@
             app:layout_constraintTop_toBottomOf="@+id/top_linearlayout">
 
             <Button
+
+                android:id="@+id/dialog_cancel"
                 android:layout_marginBottom="8dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:text="انصراف"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="150dp">
+                android:layout_marginRight="8dp"
+                android:textSize="24sp"
+                android:background="@drawable/failed_btn"
+            >
 
             </Button>
 
             <Button
+                android:id="@+id/dialog_confirm"
                 android:layout_marginBottom="8dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:text="تایید"
+                android:textColor="#fff"
+                android:textSize="24sp"
+                android:background="@drawable/success_btn"
                 tools:layout_editor_absoluteX="205dp"
                 tools:layout_editor_absoluteY="150dp">
 
