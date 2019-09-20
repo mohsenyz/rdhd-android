@@ -7,6 +7,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import com.rdhd.app.R;
+import com.rdhd.app.utils.StringUtilsKt;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,26 +26,61 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 public class SignUpActivity extends AppCompatActivity{
 
     Toolbar toolbar;
-    EditText email,password,name;
+    EditText name,phoneNumber,email,password;
     CheckBox checkBox;
     ImageButton signup;
     Button signin;
-    TextView already_signed_up;
+    TextView never_signed_in;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        already_signed_up = findViewById(R.id.already_signed_up);
+        never_signed_in = findViewById(R.id.never_signed_in);
+        name = findViewById(R.id.editTextName);
+        phoneNumber = findViewById(R.id.editTextPhoneNumber);
+        email = findViewById(R.id.editTextEmail);
+        password = findViewById(R.id.editTextPassword);
 
-        already_signed_up.setOnClickListener(new View.OnClickListener() {
+        never_signed_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
+                finish();
             }
         });
 
+
+        findViewById(R.id.registerButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (name.getText().toString().trim() == "") {
+                    Toast.makeText(SignUpActivity.this, "اسم میتونه خالی باشه؟", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (phoneNumber.getText().toString().trim() == "") {
+                    Toast.makeText(SignUpActivity.this, "شماره تلفن :-/", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (email.getText().toString().trim() == "") {
+                    Toast.makeText(SignUpActivity.this, "ایمیل رو وارد کنید!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (password.getText().toString().trim() == "") {
+                    Toast.makeText(SignUpActivity.this, "پسورد رو لطفا وارد کنید :-/", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                String phone = StringUtilsKt.normalizePhone(phoneNumber.getText().toString());
+                if (phone == null) {
+                    Toast.makeText(SignUpActivity.this, "شماره تلفن معتبر نیست", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                startActivity(new Intent(SignUpActivity.this, Authentication.class));
+            }
+        });
     }
 
     @Override

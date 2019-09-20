@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.rdhd.app.R;
+import com.rdhd.app.repositories.local.UserPrefs;
+import com.rdhd.app.utils.StringUtilsKt;
 //import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -23,12 +25,12 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 public class LoginActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-    EditText email,password;
+    EditText phoneNumber,password;
     CheckBox checkBox;
     ImageButton signin;
     Button signup;
 
-    TextView never_signed_in;
+    TextView already_signed_up;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,12 +65,41 @@ public class LoginActivity extends AppCompatActivity {
 //            }
 //        });
 
-        never_signed_in = findViewById(R.id.never_signed_in);
+        already_signed_up = findViewById(R.id.already_signed_up);
 
-        never_signed_in.setOnClickListener(new View.OnClickListener() {
+        already_signed_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+                finish();
+            }
+        });
+
+
+        phoneNumber = findViewById(R.id.editTextEmail);
+        password = findViewById(R.id.editTextPassword);
+
+        findViewById(R.id.cirLoginButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (phoneNumber.getText().toString().trim() == "") {
+                    Toast.makeText(LoginActivity.this, "لطفا شماره تلفن خود را وارد کنید", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (password.getText().toString().trim() == "") {
+                    Toast.makeText(LoginActivity.this, "لطفا شماره تلفن خود را وارد کنید", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                String result = StringUtilsKt.normalizePhone(phoneNumber.getText().toString());
+                if (result == null) {
+                    Toast.makeText(LoginActivity.this, "شماره تلفن معتبر نیست", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                UserPrefs.INSTANCE.setToken(LoginActivity.this, "default");
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                finish();
             }
         });
 
