@@ -29,9 +29,9 @@
             <EditText
                 android:id="@+id/editTextEmail"
                 style="@style/modifiedEditText"
-                android:inputType="textEmailAddress"
+                android:inputType="phone"
                 android:maxLines="1"
-                android:hint="@string/login_email_hint"/>
+                android:hint="شماره تلفن"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

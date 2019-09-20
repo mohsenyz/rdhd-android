@@ -1,21 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rdhd.app">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
-        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".App">
         <activity android:name=".ui.CustomerServiceActivity"></activity>
         <activity android:name=".ui.Authentication" />
         <activity android:name=".ui.ServicesActivity" />
         <activity android:name=".ui.QrCodeActivity" />
         <activity android:name=".ui.SettingActivity" />
         <activity android:name=".ui.CodeScannerActivity" />
+        <activity android:name=".ui.ServiceActivity"></activity>
+        <activity
+            android:name=".ui.NewCardActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.CardManagementActivity" />
         <activity android:name=".ui.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,20 +29,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".LinkDispatcher"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="hpay" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.LoginActivity" />
-        <activity android:name=".ui.SignUpActivity" />
+
+        <activity android:name=".ui.LoginActivity" >
+        </activity>
+        <activity android:name=".ui.SignUpActivity"></activity>
+
     </application>
 
 </manifest>

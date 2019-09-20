@@ -7,11 +7,15 @@ data class Service (
 
 
 data class GetService(
-    val serviceName : String,
-    val price : String,
-    val period : String,
-    val pricepp : String,
-    val id : String,
-    val startTime : Long,
-    val endTime : Long
+    val name : String? = null,
+    val price : String? = null,
+    val period : String? = null,
+    val pricepp : String? = null,
+    val id : String? = null,
+    val col : String? = null,
+    val phonenumber : String? = null,
+    val idservice : String? = null,
+    val starttime : Long = 0L,
+    val endtime : Long = 0L,
+    val barcode : String? = null
 )
