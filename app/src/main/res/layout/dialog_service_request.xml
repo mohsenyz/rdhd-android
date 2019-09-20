@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/key_2"
-            android:text="پایان دوره :"
+            android:text=" دوره :"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             android:padding="9dp"
@@ -112,6 +112,94 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialogItem3"
+        app:layout_constraintTop_toBottomOf="@id/dialogItem2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/key_3"
+            android:text=" تعداد قسط :"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="9dp"
+            android:layout_marginRight="25dp"
+            android:textAppearance="@style/AppTheme.TextAppearance.RequestDialogItem"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/value_3"
+            android:text="۲۳ شهریور ۱۳۹۸"
+            android:layout_marginLeft="25dp"
+            android:padding="9dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textAppearance="@style/AppTheme.TextAppearance.RequestDialogItem"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:background="#297cde"
+            app:layout_constraintBottom_toBottomOf="parent"></View>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialogItem4"
+        app:layout_constraintTop_toBottomOf="@id/dialogItem3">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/key_4"
+            android:text=" مجموع هزینه :"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="9dp"
+            android:layout_marginRight="25dp"
+            android:textAppearance="@style/AppTheme.TextAppearance.RequestDialogItem"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/value_4"
+            android:text="۲۳ شهریور ۱۳۹۸"
+            android:layout_marginLeft="25dp"
+            android:padding="9dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textAppearance="@style/AppTheme.TextAppearance.RequestDialogItem"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:background="#297cde"
+            app:layout_constraintBottom_toBottomOf="parent"></View>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -119,7 +207,7 @@
         android:text="برای پرداخت هزینه, حداقل یک کارت بانکی انتخاب کنید"
         android:textAppearance="@style/AppTheme.TextAppearance.RequestDialogCaption"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dialogItem2"
+        app:layout_constraintTop_toBottomOf="@id/dialogItem4"
         android:layout_marginRight="20dp"
         android:id="@+id/selectCardCaption"
         android:layout_marginTop="8dp"/>
@@ -131,6 +219,8 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/dashed_round_rect"
         android:text="انتخاب کارت"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:textAppearance="@style/AppTheme.TextAppearance.SelectCardBtn"
@@ -174,6 +264,8 @@
                 android:textColor="#444"
                 android:background="@drawable/failed_btn"
                 android:layout_marginRight="8dp"
+                android:textAppearance="@style/AppTheme.TextAppearance.RequestDialogItem"
+                android:id="@+id/cancel"
                 android:text="لغو" />
             <Button
                 android:layout_width="0dp"
@@ -181,6 +273,8 @@
                 android:layout_weight="0.5"
                 android:textColor="#fff"
                 android:text="تایید پرداخت"
+                android:id="@+id/submit"
+                android:textAppearance="@style/AppTheme.TextAppearance.RequestDialogItem"
                 android:background="@drawable/success_btn"/>
 
         </LinearLayout>

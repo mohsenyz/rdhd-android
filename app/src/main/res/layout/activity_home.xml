@@ -102,25 +102,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/separateLineHeight"
                 android:background="@drawable/seperator_line"
-                android:id="@+id/separator_2"
+                android:layout_marginTop="@dimen/homeTopSectionItemMarginTop"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="@dimen/homeTopSectionItemMarginTop" />
+                android:id="@+id/separator_2" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/separator_2"
                 android:layout_marginTop="@dimen/homeTopSectionItemMarginTop"
-                android:id="@+id/topSectionCaption2"
                 android:textAppearance="@style/AppTheme.TextAppearance.TopSectionCaption"
-                android:text="تاریخچه ی پرداخت"/>
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_left"
+                android:id="@+id/topSectionCaption2"
+                android:text="امتیاز"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="@id/topSectionCaption2"
                 app:layout_constraintBottom_toBottomOf="@id/topSectionCaption2"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+                android:layout_marginLeft="6dp"
+                app:layout_constraintLeft_toRightOf="@id/topSectionSyncValue2"
+                android:textAppearance="@style/AppTheme.TextAppearance.TopSectionCaption"
+                android:id="@+id/topSectionValue2"
+                android:text="۱۰۰۰ "/>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_sync"
+                android:id="@+id/topSectionSyncValue2"
+                android:layout_marginLeft="5dp"
+                app:layout_constraintTop_toTopOf="@id/topSectionCaption2"
+                app:layout_constraintBottom_toBottomOf="@id/topSectionCaption2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -128,9 +144,14 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:focusable="false"
+        android:clickable="false"
+        android:id="@+id/nestedScrollView"
         app:layout_constraintTop_toTopOf="parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:focusable="false"
+            android:clickable="false"
             android:layout_height="wrap_content"
             android:descendantFocusability="blocksDescendants">
             <com.rdhd.app.ui.customview.RoundedRectangleShadow
@@ -163,6 +184,7 @@
                     android:layout_marginTop="@dimen/homeLinkBarItemMarginTop"
                     android:gravity="center"
                     android:elevation="10dp"
+                    android:id="@+id/services"
                     android:background="@drawable/icon_border_wrapper"
                     android:orientation="vertical">
                     <androidx.appcompat.widget.AppCompatImageView
@@ -182,6 +204,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/barcodeReader"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
@@ -249,4 +272,14 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="@dimen/homeTopSectionIconMargin"
+        android:layout_marginRight="@dimen/homeTopSectionIconMargin"
+        android:id="@+id/profileBtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

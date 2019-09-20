@@ -36,6 +36,7 @@
             app:figures="6"
             app:selectedBackgroundColor="@color/colorPrimary"
             app:verCodeMargin="10dp"
+            android:id="@+id/otpCode"
             android:layout_marginTop="@dimen/loginViewsMargin"/>
 
     <!--    <com.google.android.material.textfield.TextInputLayout
