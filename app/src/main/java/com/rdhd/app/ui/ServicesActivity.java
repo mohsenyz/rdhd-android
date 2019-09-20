@@ -1,6 +1,7 @@
 package com.rdhd.app.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,7 +15,10 @@ import com.rdhd.app.R;
 import com.rdhd.app.adapters.ProviderServiceAdapter;
 import com.rdhd.app.models.ProviderService;
 import com.rdhd.app.repositories.interfaces.ServiceOnClick;
-import com.rdhd.app.ui.customview.CustomDialog;
+import com.rdhd.app.repositories.interfaces.SubmitDialog;
+import com.rdhd.app.dialogs.CustomDialog;
+import com.rdhd.app.dialogs.GetServiceDialog;
+import com.rdhd.app.utils.SwipeToRemoveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,11 +44,17 @@ public class ServicesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                CustomDialog customDialog = new CustomDialog(ServicesActivity.this);
+                CustomDialog customDialog = new CustomDialog(ServicesActivity.this, new SubmitDialog() {
+                    @Override
+                    public void OnSubmitListener(ProviderService providerService) {
+                        Toast.makeText(ServicesActivity.this, "this is " + providerService.getName(), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
                 customDialog.show();
             }
         });
-        List<ProviderService> providerServiceList = new ArrayList<>();
+        final List<ProviderService> providerServiceList = new ArrayList<>();
 
         ProviderService p1 = new ProviderService("بیمه آسیا","1233","2000","دوماه","20","بیمه");
 
@@ -60,13 +70,37 @@ public class ServicesActivity extends AppCompatActivity {
         psa.setServiceOnClick(new ServiceOnClick() {
             @Override
             public void OnProviderServiceClick(View itemView, int position) {
-                Toast.makeText(ServicesActivity.this, "داره کار میکنه بابا"+position, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(ServicesActivity.this, "داره کار میکنه بابا"+position, Toast.LENGTH_SHORT).show();
+
+                GetServiceDialog getServiceDialog = new GetServiceDialog(ServicesActivity.this);
+                getServiceDialog.show();
             }
         });
         recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerView.setAdapter(psa);
+        SwipeToRemoveCallback swipeToRemoveCallback = new SwipeToRemoveCallback(psa);
+        new ItemTouchHelper(swipeToRemoveCallback).attachToRecyclerView(recyclerView);
+
         psa.notifyDataSetChanged();
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                CustomDialog customDialog = new CustomDialog(ServicesActivity.this, new SubmitDialog() {
+                    @Override
+                    public void OnSubmitListener(ProviderService providerService) {
+                        Toast.makeText(ServicesActivity.this, "this is " + providerService.getName(), Toast.LENGTH_SHORT).show();
+                        providerServiceList.add(providerService);
+                        psa.notifyItemInserted(providerServiceList.size()-1);
+                        psa.notifyDataSetChanged();
+                    }
+                });
+                customDialog.show();
+            }
+        });
+
+
 
     }
 
