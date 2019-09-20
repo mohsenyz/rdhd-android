@@ -13,6 +13,7 @@ import com.airbnb.deeplinkdispatch.DeepLink
 import com.rdhd.app.BaseActivity
 import com.rdhd.app.R
 import com.rdhd.app.adapters.ServicesAdapter
+import com.rdhd.app.dialogs.ServiceRequestDialog
 import com.rdhd.app.models.Service
 import com.rdhd.app.utils.convertDpToPixel
 import kotlinx.android.synthetic.main.activity_home.*
@@ -37,5 +38,7 @@ class HomeActivity : BaseActivity() {
         servicesRecyclerView.adapter = ServicesAdapter(fake)
 
         startActivity(Intent(this, CodeScannerActivity::class.java))
+
+        ServiceRequestDialog(this).show()
     }
 }
