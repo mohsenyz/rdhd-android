@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:background="@drawable/qrcode_toolbar_background"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        style="?attr/borderlessButtonStyle"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:id="@+id/appCompatImageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:text="کد تولید شده"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/appCompatImageButton"
+        app:layout_constraintStart_toEndOf="@+id/appCompatImageButton3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.484" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        style="?attr/borderlessButtonStyle"
+        android:src="@drawable/ic_gear"
+        android:id="@+id/appCompatImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
