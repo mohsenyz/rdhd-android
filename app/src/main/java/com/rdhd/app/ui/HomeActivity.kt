@@ -9,6 +9,7 @@ import android.widget.FrameLayout
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.doOnLayout
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.GridLayoutManager
@@ -42,7 +43,7 @@ class HomeActivity : BaseActivity() {
         val fake = listOf<Service>(Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance),Service("بیمه", R.drawable.insurance))
         servicesRecyclerView.adapter = ServicesAdapter(fake)
         services_layout.setOnClickListener{
-            startActivity(Intent(this,QrCodeActivity::class.java))
+            startActivity(Intent(this,ServicesActivity::class.java))
         }
 
 

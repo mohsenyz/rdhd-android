@@ -10,10 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.QrCodeActivity"></activity>
+        <activity android:name=".ui.ServicesActivity"></activity>
+        <activity android:name=".ui.QrCodeActivity" />
         <activity android:name=".ui.SettingActivity" />
         <activity android:name=".ui.Authentication" />
-        <activity android:name=".ui.HomeActivity" >
+        <activity android:name=".ui.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,9 +33,7 @@
                 <data android:scheme="hpay" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.LoginActivity">
-
-        </activity>
+        <activity android:name=".ui.LoginActivity"></activity>
         <activity android:name=".ui.SignUpActivity" />
     </application>
 

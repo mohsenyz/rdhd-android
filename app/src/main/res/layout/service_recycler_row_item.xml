@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:background="@drawable/recycler_row_background"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="9">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/service_price"
+            android:text="مبلغ"
+            android:textSize="24sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/service_period"
+            android:text="دوره"
+            android:textSize="24sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/service_name"
+            android:text="نام سرویس"
+            android:textSize="24sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
