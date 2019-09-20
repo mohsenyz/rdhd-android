@@ -1,5 +1,6 @@
 package com.rdhd.app.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.rdhd.app.R;
 import com.rdhd.app.models.ProviderService;
 import com.rdhd.app.repositories.interfaces.ServiceOnClick;
@@ -22,6 +24,8 @@ public class ProviderServiceAdapter extends RecyclerView.Adapter<ProviderService
     private List<ProviderService> providerServices;
     private Context context;
     private ServiceOnClick serviceOnClick;
+    private int mRecentlyDeletedItemPosition;
+    private ProviderService mRecentlyDeletedItem;
 
     public ProviderServiceAdapter(List<ProviderService> providerServices, Context context) {
         if(providerServices.isEmpty()){
@@ -83,6 +87,33 @@ public class ProviderServiceAdapter extends RecyclerView.Adapter<ProviderService
             period = itemView.findViewById(R.id.service_period);
             price = itemView.findViewById(R.id.service_price);
         }
+    }
+
+    public void deleteItem(int position){
+        mRecentlyDeletedItem = providerServices.get(position);
+        mRecentlyDeletedItemPosition = position;
+        providerServices.remove(position);
+        notifyItemRemoved(position);
+        showUndoSnackbar();
+    }
+
+    private void showUndoSnackbar() {
+        View view = ((Activity)context).findViewById(R.id.coordinator_layout);
+        Snackbar snackbar = Snackbar.make(view, R.string.snack_bar_text,
+                Snackbar.LENGTH_LONG);
+        snackbar.setAction(R.string.snack_bar_undo, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                undoDelete();
+            }
+        });
+        snackbar.show();
+    }
+
+    private void undoDelete() {
+        providerServices.add(mRecentlyDeletedItemPosition,
+                mRecentlyDeletedItem);
+        notifyItemInserted(mRecentlyDeletedItemPosition);
     }
 }
 
