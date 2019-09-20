@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="16dp"
+    android:layout_marginTop="4dp"
+    app:cardCornerRadius="15dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/serial"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="60dp"
+            android:text="۳۰۳۷ ۹۹۷۲ ۰۸۲۹ ۲۰۴۶"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textAppearance="@style/AppTheme.TextAppearance.CardSelectId"/>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/melli"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            android:id="@+id/icon"
+            android:layout_marginRight="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/AppTheme.TextAppearance.BankName"
+            android:text="بانک ملی"
+            app:layout_constraintTop_toTopOf="@id/icon"
+            app:layout_constraintBottom_toBottomOf="@id/icon"
+            app:layout_constraintRight_toLeftOf="@id/icon"
+            android:layout_marginRight="4dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/serial"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="32dp"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cvv2 : "
+                android:textAppearance="@style/AppTheme.TextAppearance.RequestDialogItem"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cvv2"
+                android:text="سلام"
+                android:textAppearance="@style/AppTheme.TextAppearance.RequestDialogItem"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/serial"
+            android:layout_marginTop="32dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:textDirection="rtl"
+            android:layout_marginBottom="14dp"
+            android:layoutDirection="rtl">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تاریخ انقضا : "
+                android:textAppearance="@style/AppTheme.TextAppearance.RequestDialogItem"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/expireTime"
+                android:text="سلام"
+                android:textAppearance="@style/AppTheme.TextAppearance.RequestDialogItem"/>
+        </LinearLayout>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="4dp"
+            android:id="@+id/checkbox"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
