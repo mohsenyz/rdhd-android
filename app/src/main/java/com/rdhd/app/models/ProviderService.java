@@ -10,10 +10,10 @@ public class ProviderService {
 
     public ProviderService(String name, String id, String price, String period, String pricepp, String col) {
         this.name = name;
-        this.id = id;
+        //this.id = id;
         this.price = price;
         this.period = period;
-        this.pricepp = pricepp;
+       // this.pricepp = pricepp;
         this.col = col;
     }
 
