@@ -30,7 +30,7 @@ public class Authentication extends AppCompatActivity {
                 if (otpCode.getText().toString().trim().length() == 6) {
                     UserPrefs.INSTANCE.setToken(Authentication.this, "default");
                     finishAffinity();
-                    startActivity(new Intent(Authentication.this, HomeActivity.class));
+                    startActivity(new Intent(Authentication.this, ProviderHomeActivity.class));
                 } else {
                     Toast.makeText(Authentication.this, "کد رو اشتباه وارد کردی عزیز", Toast.LENGTH_SHORT).show();
                 }

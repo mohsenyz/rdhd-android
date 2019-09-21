@@ -9,6 +9,7 @@ import androidx.core.widget.ContentLoadingProgressBar;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -94,7 +95,39 @@ public class QrCodeActivity extends AppCompatActivity {
     }
 
     private void saveToGllery(){
-        //ImageView imageView = ((ImageView)qrCodeImageView);
+//
+//        BitmapDrawable drawable = (BitmapDrawable) qrCodeImageView.getDrawable();
+//
+//        Bitmap bitmap = drawable.getBitmap();
+//
+//        FileOutputStream outStream = null;
+//        File sdCard = Environment.getExternalStorageDirectory();
+//        File dir = new File(sdCard.getAbsolutePath() + "/YourFolderName");
+//        dir.mkdirs();
+//
+//        String fileName = String.format("%d.jpg", System.currentTimeMillis());
+//        File outFile = new File(dir, fileName);
+//
+//        try {
+//            outStream = new FileOutputStream(outFile);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//
+//
+//        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
+//        try {
+//            outStream.flush();
+//            outStream.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }catch (NullPointerException e){
+//            e.printStackTrace();
+//        }
+
+
+
+        ImageView imageView = ((ImageView)qrCodeImageView);
         qrCodeImageView.buildDrawingCache();
         Bitmap bmp = qrCodeImageView.getDrawingCache();
         File storageLoc = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES); //context.getExternalFilesDir(null);

@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 UserPrefs.INSTANCE.setToken(LoginActivity.this, "default");
-                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                startActivity(new Intent(LoginActivity.this, ProviderHomeActivity.class));
                 finish();
             }
         });
