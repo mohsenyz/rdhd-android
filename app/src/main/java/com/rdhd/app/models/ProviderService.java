@@ -13,7 +13,7 @@ public class ProviderService {
         //this.id = id;
         this.price = price;
         this.period = period;
-       // this.pricepp = pricepp;
+        this.pricepp = pricepp;
         this.col = col;
     }
 

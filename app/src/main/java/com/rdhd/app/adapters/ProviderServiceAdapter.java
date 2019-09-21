@@ -16,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.rdhd.app.R;
 import com.rdhd.app.models.ProviderService;
 import com.rdhd.app.repositories.interfaces.ServiceOnClick;
+import com.rdhd.app.utils.StringUtilsKt;
 
 import java.util.List;
 
@@ -62,10 +63,12 @@ public class ProviderServiceAdapter extends RecyclerView.Adapter<ProviderService
     public void onBindViewHolder(@NonNull ServiceViewHolder holder, int position) {
 
         holder.name.setText(providerServices.get(position).getName());
-        holder.price.setText(providerServices.get(position).getPrice());
-        holder.period.setText(providerServices.get(position).getPeriod());
-        Toast.makeText(context, "onBindViewHolder: "+ providerServices.get(position).getPrice(), Toast.LENGTH_SHORT).show();
-        Log.d("padapter", "onBindViewHolder: "+ providerServices.get(position).getPrice());
+        holder.price.setText(StringUtilsKt.fa(providerServices.get(position).getPrice()));
+        holder.period.setText(StringUtilsKt.fa(providerServices.get(position).getPeriod()));
+        holder.priceprp.setText(providerServices.get(position).getPricepp());
+
+//        Toast.makeText(context, "onBindViewHolder: "+ providerServices.get(position).getPrice(), Toast.LENGTH_SHORT).show();
+//        Log.d("padapter", "onBindViewHolder: "+ providerServices.get(position).getPrice());
 
 
     }
@@ -80,12 +83,13 @@ public class ProviderServiceAdapter extends RecyclerView.Adapter<ProviderService
         AppCompatTextView name;
         AppCompatTextView period;
         AppCompatTextView price;
-
+        AppCompatTextView priceprp;
         public ServiceViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.service_name);
             period = itemView.findViewById(R.id.service_period);
             price = itemView.findViewById(R.id.service_price);
+            priceprp = itemView.findViewById(R.id.service_priceprp);
         }
     }
 

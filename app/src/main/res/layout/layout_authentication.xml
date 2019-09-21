@@ -18,7 +18,8 @@
         android:padding="@dimen/loginViewsMargin">
 
         <TextView
-            android:layout_marginBottom="10dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="15dp"
             style="@style/headerTextPrimary"
             android:text="@string/enter_verification_code"
             android:layout_marginTop="@dimen/loginViewsMargin"/>
@@ -26,15 +27,14 @@
 
         <com.jkb.vcedittext.VerificationCodeEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:inputType="number"
-            android:text="123456"
             android:textColor="@color/colorPrimary"
             android:textSize="30sp"
             app:bottomLineHeight="2dp"
             app:bottomLineSelectedColor="@color/primaryTextColor"
             app:figures="6"
-            app:selectedBackgroundColor="@color/colorPrimary"
+            app:selectedBackgroundColor="@color/colorAccent"
             app:verCodeMargin="10dp"
             android:id="@+id/otpCode"
             android:layout_marginTop="@dimen/loginViewsMargin"/>

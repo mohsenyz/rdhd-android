@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.rdhd.app.BaseActivity;
 import com.rdhd.app.R;
 import com.rdhd.app.adapters.ProviderServiceAdapter;
 import com.rdhd.app.models.ProviderService;
@@ -25,7 +26,7 @@ import java.util.List;
 
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
-public class ServicesActivity extends AppCompatActivity {
+public class ServicesActivity extends BaseActivity {
 
     RecyclerView recyclerView;
     ProviderServiceAdapter psa;
@@ -56,7 +57,7 @@ public class ServicesActivity extends AppCompatActivity {
         });
         final List<ProviderService> providerServiceList = new ArrayList<>();
 
-        ProviderService p1 = new ProviderService("بیمه آسیا","1233","2000","دوماه","20","بیمه");
+        ProviderService p1 = new ProviderService("بیمه حوادث","1233","2000","دوماه","20 ریال","بیمه");
 
         for (int i=0;i<5;i++){
             providerServiceList.add(p1);

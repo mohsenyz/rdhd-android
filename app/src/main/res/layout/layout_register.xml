@@ -17,7 +17,7 @@
 
         <TextView
             style="@style/headerTextPrimary"
-            android:text="@string/register"
+            android:text="ثبت نام سرویس دهنده"
             android:layout_marginTop="@dimen/loginViewsMargin"/>
 
         <com.google.android.material.textfield.TextInputLayout

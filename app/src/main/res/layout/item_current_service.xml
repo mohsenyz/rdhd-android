@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/title"
-        android:text="بیمه شخص ثالث"
+        android:text="حسن شماعی زاده"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="@style/AppTheme.TextAppearance.ServicePassedPriceUnit"
             android:id="@+id/price"
-            android:text="۵۰۰۰"/>
+            android:text="۵۰"/>
     </LinearLayout>
 
 
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="@style/AppTheme.TextAppearance.ServicePassedItem"
             android:layout_marginRight="8dp"
-            android:text="بیمه ی تعاون"/>
+            android:text="بیمه ی خوادث"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="20dp"
             android:layout_height="20dp"

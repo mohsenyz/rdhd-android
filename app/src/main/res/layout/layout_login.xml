@@ -19,7 +19,7 @@
 
         <TextView
             style="@style/headerTextPrimary"
-            android:text="@string/login"
+            android:text="سرویس دهنده"
             android:layout_marginTop="@dimen/loginViewsMargin"/>
 
         <com.google.android.material.textfield.TextInputLayout

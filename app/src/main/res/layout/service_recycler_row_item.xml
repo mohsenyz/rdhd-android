@@ -41,6 +41,7 @@
         android:gravity="center"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="30dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,6 +55,12 @@
             android:textAppearance="@style/AppTheme.TextAppearance.ServicePassedPrice"
             android:id="@+id/service_price"
             android:text="۵۰۰۰"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="مجموع :"
+            android:textAppearance="@style/AppTheme.TextAppearance.ServicePassedPriceUnit"/>
     </LinearLayout>
 
 
@@ -74,15 +81,22 @@
         android:id="@+id/companyContainer"
         android:layout_marginTop="10dp">
         <TextView
+            android:id="@+id/service_priceprp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/AppTheme.TextAppearance.ServicePassedItem"
             android:layout_marginRight="8dp"
             android:text="بیمه ی تعاون"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/AppTheme.TextAppearance.ServicePassedItem"
+            android:layout_marginRight="8dp"
+            android:text="هر قسط :"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/ic_company"
+            android:src="@drawable/ic_dollar"
             android:tint="#4CAF50"/>
     </LinearLayout>
     <LinearLayout

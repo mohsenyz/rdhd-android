@@ -23,6 +23,16 @@ import com.rdhd.app.repositories.local.UserPrefs
 import com.rdhd.app.utils.convertDpToPixel
 import com.rdhd.app.utils.fa
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_home.linkBarSection
+import kotlinx.android.synthetic.main.activity_home.nestedScrollView
+import kotlinx.android.synthetic.main.activity_home.profileBtn
+import kotlinx.android.synthetic.main.activity_home.services
+import kotlinx.android.synthetic.main.activity_home.servicesRecyclerView
+import kotlinx.android.synthetic.main.activity_home.topSection
+import kotlinx.android.synthetic.main.activity_home.topSectionSyncValue
+import kotlinx.android.synthetic.main.activity_home.topSectionSyncValue2
+import kotlinx.android.synthetic.main.activity_home.topSectionValue2
+import kotlinx.android.synthetic.main.provider_home_activity.*
 
 
 @DeepLink("hpay://home")
@@ -30,7 +40,7 @@ class ProviderHomeActivity : BaseActivity(requiresAuth = true) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.provider_home_activity)
 
         initializeViews()
         requestPermissions()
@@ -59,12 +69,12 @@ class ProviderHomeActivity : BaseActivity(requiresAuth = true) {
             startActivity(Intent(this, CardManagementActivity::class.java))
         }
 
-        barcodeReader.setOnClickListener {
-            startActivity(Intent(this, CodeScannerActivity::class.java))
+        payments.setOnClickListener {
+            startActivity(Intent(this, PaymentsActivity::class.java))
         }
 
         services.setOnClickListener {
-            startActivity(Intent(this, ServiceActivity::class.java))
+            startActivity(Intent(this, ServicesActivity::class.java))
         }
 
         topSectionSyncValue.setOnClickListener {
